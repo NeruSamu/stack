@@ -16,3 +16,13 @@
 .container p {
     color: rgb(96, 176, 255);
 }
+
+.estiloBoton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: cornflowerblue;
+    color: aliceblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
