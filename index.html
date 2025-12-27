@@ -5,30 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="salchipapa.css">
-    <link rel="stylesheet" href="hamburgesa.css">
     <title>TETRIS MODERNO</title>
+    <style>
+        body {
+            background-color: rgb(4, 6, 14);
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body>.container {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .container img {
+            transition: transform 0.5s ease;
+            border-radius: 8px;
+        }
+
+        .container:hover img {
+            transform: scale(1.02);
+        }
+    </style>
 </head>
 
-<body style="background-color: rgb(4, 6, 14);">
-
+<body>
     <div class="container">
         <h1>TETR.IO</h1>
-        <p> An online multiplayer stacker puzzle game. Play online in lobbies or challenge the scoreboards.</p>
-        <img src="https://tetr.io/res/favicon.ico" alt="source not found"
+        <p>An online multiplayer stacker puzzle game. Play online in lobbies or challenge the scoreboards.</p>
+        <img src="https://tetr.io/res/favicon.ico" alt="TETR.IO icon"
             style="width: 30%; display: block; margin: 0 auto;">
         <a href="https://tetr.io/">
             <button class="estiloBoton">
                 tetr.io
             </button>
         </a>
-
     </div>
+
     <div class="container">
         <h1>Apotris</h1>
         <p>Apotris is a free, open-source, multiplatform block-stacking game with highly responsive controls, deep
             customization, and 14 game modes. It offers both casual and competitive play, including local multiplayer,
             and can be played on many platforms beyond its original Game Boy Advance design.</p>
-        <img src="https://akouzoukos.com/assets/logo.png" alt="source not found"
+        <img src="https://akouzoukos.com/assets/logo.png" alt="Apotris logo"
             style="width: 100%; display: block; margin: 0 auto;">
         <a href="https://akouzoukos.com/apotris">
             <button class="estiloBoton">
@@ -36,25 +56,27 @@
             </button>
         </a>
     </div>
+
     <div class="container">
         <h1>Techmino</h1>
         <p>Techmino is a fast-paced block-stacking game focused on competitive and high-skill gameplay. It features
             multiple game modes, smooth and responsive controls, and advanced mechanics designed for experienced
             players, while still offering options for practice and customization.</p>
-        <img src="https://tetris.wiki/images/thumb/c/c3/Techmino_icon.png/220px-Techmino_icon.png"
-            alt="source not found" style="width: 30%; display: block; margin: 0 auto;">
+        <img src="https://tetris.wiki/images/thumb/c/c3/Techmino_icon.png/220px-Techmino_icon.png" alt="Techmino icon"
+            style="width: 30%; display: block; margin: 0 auto;">
         <a href="https://github.com/26F-Studio/Techmino">
             <button class="estiloBoton">
                 Techmino
             </button>
         </a>
     </div>
+
     <div class="container">
         <h1>Jtris</h1>
         <p>Jtris is a lightweight, classic block-stacking game for PC that focuses on simple, fast gameplay. It
             emphasizes efficiency and speed, offering a straightforward experience inspired by traditional Tetris
             mechanics without heavy customization or extra features.</p>
-        <img src="https://tetris.wiki/images/thumb/2/2b/Jstris_icon.png/220px-Jstris_icon.png" alt="source not found"
+        <img src="https://tetris.wiki/images/thumb/2/2b/Jstris_icon.png/220px-Jstris_icon.png" alt="Jstris icon"
             style="width: 30%; display: block; margin: 0 auto;">
         <a href="https://jstris.jezevec10.com/">
             <button class="estiloBoton">
@@ -62,12 +84,13 @@
             </button>
         </a>
     </div>
+
     <div class="container">
         <h1>Infidhells</h1>
         <p>InfidHells is a fast and challenging arcade-style block-stacking game focused on survival and high
             difficulty. It emphasizes intense gameplay, precise control, and quick decision-making, appealing mainly to
             experienced players looking for a tough, no-nonsense challenge.</p>
-        <img src="https://img.itch.zone/aW1nLzQ5NTgxODgucG5n/original/CjFxgL.png" alt="source not found"
+        <img src="https://img.itch.zone/aW1nLzQ5NTgxODgucG5n/original/CjFxgL.png" alt="Infidhells icon"
             style="width: 100%; display: block; margin: 0 auto;">
         <a href="https://abject.itch.io/infidhells">
             <button class="estiloBoton">
@@ -75,12 +98,13 @@
             </button>
         </a>
     </div>
+
     <div class="container">
         <h1>Tetraesports</h1>
         <p>Tetra eSports is a modern block-stacking game focused on competitive play, fluidity, and strategy, while
             remaining accessible and fun for players of all skill levels. It offers a rebalanced, fixed-tuned experience
             that gives genre veterans a fresh competitive challenge.</p>
-        <img src="https://tetraesports.com/small-icon.svg" alt="source not found"
+        <img src="https://tetraesports.com/small-icon.svg" alt="Tetraesports icon"
             style="width: 100%; display: block; margin: 0 auto;">
         <a href="https://tetraesports.com/">
             <button class="estiloBoton">
@@ -88,12 +112,13 @@
             </button>
         </a>
     </div>
+
     <div class="container">
         <h1>Nuketris</h1>
         <p>Nuketris is a fast-paced, minimalist block-stacking game focused on speed, precision, and high difficulty. It
             strips the gameplay down to its core mechanics, making it especially appealing to experienced players who
             enjoy intense, skill-based challenges.</p>
-        <img src="https://pbs.twimg.com/profile_images/1380660773769375744/YX93Q-Q9_400x400.jpg" alt="source not found"
+        <img src="https://pbs.twimg.com/profile_images/1380660773769375744/YX93Q-Q9_400x400.jpg" alt="Nuketris icon"
             style="width: 40%; display: block; margin: 0 auto;">
         <a href="https://nuketris.com/">
             <button class="estiloBoton">
@@ -101,12 +126,13 @@
             </button>
         </a>
     </div>
+
     <div class="container">
         <h1>Worldwide Combos</h1>
         <p>Worldwide Combos is a competitive block-stacking game mode centered on building and maintaining long combo
             chains. It emphasizes speed, consistency, and strategic stacking, challenging players to optimize their play
             to achieve the highest possible combo counts on a global scale.</p>
-        <img src="https://www.worldwide-combos.com/images/wwc-2.png" alt="source not found"
+        <img src="https://www.worldwide-combos.com/images/wwc-2.png" alt="Worldwide Combos icon"
             style="width: 40%; display: block; margin: 0 auto;">
         <a href="https://www.worldwide-combos.com/">
             <button class="estiloBoton">
@@ -114,12 +140,13 @@
             </button>
         </a>
     </div>
+
     <div class="container">
         <h1>Notris Foes</h1>
         <p>Notris Foes is a competitive block-stacking game that focuses on strategic play against opponents. It
             introduces unique mechanics and enemy-based challenges that add depth and variety, encouraging players to
             adapt their stacking strategies to overcome different foes.</p>
-        <img src="https://img.informer.com/icons_mac/png/128/619/619732.png" alt="souerce not found"
+        <img src="https://img.informer.com/icons_mac/png/128/619/619732.png" alt="Notris Foes icon"
             style="width: 40%; display: block; margin: 0 auto;">
         <a href="https://notrisfoes.com/">
             <button class="estiloBoton">
@@ -127,12 +154,13 @@
             </button>
         </a>
     </div>
+
     <div class="container">
         <h1>Tetra Legend</h1>
         <p>Tetra Legends is a block-stacking game that blends classic gameplay with modern features. It offers multiple
             modes, refined controls, and a progression system that appeals to both newcomers and veteran players,
-            celebrating the genre’s traditional feel while adding fresh elements.</p>
-        <img src="https://tetralegends.app/img/brand/logo/default.svg" alt="source not found"
+            celebrating the genre's traditional feel while adding fresh elements.</p>
+        <img src="https://tetralegends.app/img/brand/logo/default.svg" alt="Tetra Legend icon"
             style="width: 30%; display: block; margin: 0 auto;">
         <a href="https://tetralegends.app/">
             <button class="estiloBoton">
@@ -140,12 +168,13 @@
             </button>
         </a>
     </div>
+
     <div class="container">
         <h1>MultiMino</h1>
         <p>MultiMino is a multiplayer-focused block-stacking game designed around competitive and cooperative play. It
             emphasizes fast matches, flexible rulesets, and cross-player interaction, making it ideal for both casual
             sessions and skill-based competition.</p>
-        <img src="https://img.itch.zone/aW1nLzY1MzU0OTEucG5n/original/CMmi5l.png" alt="source not found"
+        <img src="https://img.itch.zone/aW1nLzY1MzU0OTEucG5n/original/CMmi5l.png" alt="MultiMino icon"
             style="width: 50%; display: block; margin: 0 auto;">
         <a href="https://stellartophat.itch.io/multimino">
             <button class="estiloBoton">
@@ -153,7 +182,38 @@
             </button>
         </a>
     </div>
-    
+
+    //Fallback JavaScript para navegadores antiguos
+    <script>
+        if (!CSS.supports('animation-timeline', 'view()')) {
+            console.log('Usando fallback JavaScript para animación de scroll');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.container').forEach(container => {
+                observer.observe(container);
+            });
+        } else {
+            console.log('Usando CSS Scroll Animation (animation-timeline)');
+        }
+
+        document.querySelectorAll('.estiloBoton').forEach(button => {
+            button.addEventListener('click', function (e) {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+    </script>
 </body>
 
 </html>
