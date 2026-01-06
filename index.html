@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="salchipapa.css">
-    <title>TETRIS MODERNO</title>
+    <title> no pense un nombre</title>
+    <link rel="icon" type="image/jng" href="tetrio.jpg">
     <style>
         body {
             background-color: rgb(4, 6, 14);
@@ -27,19 +28,213 @@
         .container:hover img {
             transform: scale(1.02);
         }
+        
+
+        .audio-controls {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 15px;
+            background: rgba(20, 15, 45, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(68, 68, 143, 0.3);
+            border: 1px solid rgba(100, 149, 237, 0.2);
+        }
+        
+        .audio-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: rgb(96, 176, 255);
+            font-size: 0.9em;
+        }
+        
+        .audio-icon {
+            margin-right: 10px;
+            color: cornflowerblue;
+            font-size: 1.2em;
+        }
+        
+        .progress-container {
+            margin: 15px 0;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(100, 149, 237, 0.2);
+            border-radius: 3px;
+            overflow: hidden;
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, cornflowerblue, rgb(96, 176, 255));
+            width: 0%;
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+        
+        .time-display {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8em;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .audio-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .audio-btn {
+            background: rgba(100, 149, 237, 0.2);
+            border: none;
+            color: rgb(96, 176, 255);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1.1em;
+        }
+        
+        .audio-btn:hover {
+            background: cornflowerblue;
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(100, 149, 237, 0.5);
+        }
+        
+        .audio-btn.play-pause {
+            background: cornflowerblue;
+            color: white;
+            width: 50px;
+            height: 50px;
+            font-size: 1.3em;
+        }
+        
+        .audio-btn.play-pause:hover {
+            background: rgb(70, 130, 220);
+            box-shadow: 0 0 20px rgba(100, 149, 237, 0.8);
+        }
+        
+        .volume-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .volume-icon {
+            color: rgb(96, 176, 255);
+            font-size: 1em;
+        }
+        
+        .volume-slider {
+            width: 100px;
+            height: 4px;
+            background: rgba(100, 149, 237, 0.2);
+            border-radius: 2px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: cornflowerblue;
+            cursor: pointer;
+        }
+        
+        .volume-slider::-moz-range-thumb {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: cornflowerblue;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .hidden-audio {
+            display: none;
+        }
+        
+        .audio-title {
+            margin-bottom: 10px;
+            color: white;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
- <audio autoplay loop>
-        <source src="oxygentears.wav" type="audio/mpeg">
- </audio>
-
 
     <div class="container">
-        <h1>YOU CAN'T MUTE THE MUSIC ψ(｀∇´)ψ</h1>
+        <h1> PLEASE PLAY THE MUSIC BEFORE CONTINUING</h1>
         <p> (Because it's amazing)</p>
+        <img src="dance.gif" alt="gif not found">
+        
+
+        <div class="audio-controls">
+            <div class="audio-title">
+                <i class="fas fa-music"></i>
+                <span>OXYGEN TEARS</span>
+            </div>
+            
+            <div class="audio-info">
+                <i class="fas fa-headphones-alt audio-icon"></i>
+                <span>Music by koilwood</span>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <div class="time-display">
+                    <span id="current-time">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+            </div>
+            
+            <div class="audio-buttons">
+                <button class="audio-btn" id="prev-btn" title="Rewind 10 seconds">
+                    <i class="fas fa-backward"></i>
+                </button>
+                <button class="audio-btn play-pause" id="play-pause-btn" title="Play/Pause">
+                    <i class="fas fa-play" id="play-icon"></i>
+                </button>
+                <button class="audio-btn" id="next-btn" title="Forward 10 seconds">
+                    <i class="fas fa-forward"></i>
+                </button>
+            </div>
+            
+            <div class="volume-container">
+                <i class="fas fa-volume-up volume-icon"></i>
+                <input type="range" min="0" max="100" value="80" class="volume-slider" id="volume-slider" title="Volume">
+            </div>
+        </div>
+        
+        <audio id="audio-element" class="hidden-audio" loop>
+            <source src="oxygentears.wav" type="audio/wav">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
     </div>
+
     <div class="container">
         <h1>TETR.IO</h1>
         <p>An online multiplayer stacker puzzle game. Play online in lobbies or challenge the scoreboards.</p>
@@ -193,15 +388,166 @@
     </div>
     <div class="container">
         <h1> About </h1>
+        <P> This website was made for recap all free block-stacking games with the SRS
+            <br>
+            All the games shown here are free to play, some of them are open source too.
+            <br>
+            If you know any other modern block-stacking game that is free to play on PC, please contact me so I can add it here.
+            <br>
+            Made by Samuel.
+        </P>
 
 
     </div>
     <div class="container">
         <h1> Credits </h1>
-    </div>
+        <p style="border: 1px solid #ccc; padding: 10px;"> Music by koilwood
+        <br><a href="https://www.ninaprotocol.com/profiles/koilwood"> ninaprotocol </a> 
+        <br>
+        <a href="https://koilwood.neocities.org/">website</a></p>
 
-    //Fallback JavaScript para navegadores antiguos
+        <p style="border: 1px solid #ccc; padding: 10px; font-family: monospace; white-space: pre; overflow-x: auto;"> ⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣈⣆⣤⡀⠀⡤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣠⣾⣿⣿⣿⣿⣶⣶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠈⣿⣟⣿⣿⣿⡛⢿⣻⣿⣶⡶⠶⢞⣟⣒⣒⣢⣤⣤⣀⠀⠀
+⠀⠀⠀⠻⢿⣾⣿⣌⠻⣦⣹⣿⣿⣧⣝⡳⢢⠄⣙⠑⠢⢄⡈⢳⣦
+⢠⠦⠤⠤⠮⢿⣄⡛⣷⣬⣛⣼⣿⣟⣿⣿⣶⣅⣈⠳⣄⣀⣙⣇⡸
+⠀⠀⠀⠀⠀⠀⠈⢾⣳⡿⣿⣿⣿⣿⣿⣿⣿⣷⠈⠁⠀⠀⠈⠀⠀
+⠀⠀⠀⠀⠀⢠⠤⠜⣿⣻⣟⢿⣟⣿⣯⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣠⠃⠀⠀⢻⣿⡹⣶⡛⢿⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠚⠀⠀⠀⢸⣿⣧⠣⠱⠌⢿⣿⣾⣿⠏⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣧⢿⡄⠹⡄⢸⡇⠁⠉⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣜⡽⡀⡈⣼⠋⡆⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣧⣳⣥⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</p>
+
+        </div>
+
     <script>
+
+        const audioElement = document.getElementById('audio-element');
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const playIcon = document.getElementById('play-icon');
+        const progressBar = document.getElementById('progress-bar');
+        const progress = document.getElementById('progress');
+        const currentTimeEl = document.getElementById('current-time');
+        const durationEl = document.getElementById('duration');
+        const volumeSlider = document.getElementById('volume-slider');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        
+        let isPlaying = false;
+        
+        setTimeout(() => {
+            audioElement.play().then(() => {
+                isPlaying = true;
+                updatePlayIcon();
+            }).catch(error => {
+                console.log("Autoplay bloqueado:", error);
+                const audioTitle = document.querySelector('.audio-title');
+                audioTitle.innerHTML += '<span style="font-size:0.7em; color:#ff6b6b; margin-left:10px;">(Click play)</span>';
+            });
+        }, 1000);
+        
+        function updatePlayIcon() {
+            if (isPlaying) {
+                playIcon.classList.remove('fa-play');
+                playIcon.classList.add('fa-pause');
+                playPauseBtn.setAttribute('title', 'Pause');
+            } else {
+                playIcon.classList.remove('fa-pause');
+                playIcon.classList.add('fa-play');
+                playPauseBtn.setAttribute('title', 'Play');
+            }
+        }
+        
+        function togglePlayPause() {
+            if (isPlaying) {
+                audioElement.pause();
+            } else {
+                audioElement.play();
+            }
+            isPlaying = !isPlaying;
+            updatePlayIcon();
+        }
+        
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+        
+        function updateProgress() {
+            const { currentTime, duration } = audioElement;
+            
+            if (duration) {
+                const progressPercent = (currentTime / duration) * 100;
+                progress.style.width = `${progressPercent}%`;
+                
+                currentTimeEl.textContent = formatTime(currentTime);
+                durationEl.textContent = formatTime(duration);
+            }
+        }
+        
+        function setProgress(e) {
+            const width = this.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audioElement.duration;
+            
+            if (duration) {
+                audioElement.currentTime = (clickX / width) * duration;
+            }
+        }
+        
+        function updateVolume() {
+            audioElement.volume = volumeSlider.value / 100;
+            
+            const volumeIcon = document.querySelector('.volume-icon');
+            const volumeValue = volumeSlider.value;
+            
+            if (volumeValue == 0) {
+                volumeIcon.classList.remove('fa-volume-up', 'fa-volume-down');
+                volumeIcon.classList.add('fa-volume-mute');
+            } else if (volumeValue < 50) {
+                volumeIcon.classList.remove('fa-volume-up', 'fa-volume-mute');
+                volumeIcon.classList.add('fa-volume-down');
+            } else {
+                volumeIcon.classList.remove('fa-volume-down', 'fa-volume-mute');
+                volumeIcon.classList.add('fa-volume-up');
+            }
+        }
+        
+        function prevTrack() {
+            audioElement.currentTime = Math.max(0, audioElement.currentTime - 10);
+        }
+        
+        function nextTrack() {
+            if (audioElement.duration) {
+                audioElement.currentTime = Math.min(audioElement.duration, audioElement.currentTime + 10);
+            }
+        }
+        
+        audioElement.addEventListener('loadedmetadata', () => {
+            durationEl.textContent = formatTime(audioElement.duration);
+        });
+        
+        playPauseBtn.addEventListener('click', togglePlayPause);
+        audioElement.addEventListener('play', () => {
+            isPlaying = true;
+            updatePlayIcon();
+        });
+        audioElement.addEventListener('pause', () => {
+            isPlaying = false;
+            updatePlayIcon();
+        });
+        audioElement.addEventListener('timeupdate', updateProgress);
+        progressBar.addEventListener('click', setProgress);
+        volumeSlider.addEventListener('input', updateVolume);
+        prevBtn.addEventListener('click', prevTrack);
+        nextBtn.addEventListener('click', nextTrack);
+        
+        updateVolume();
+        
         if (!CSS.supports('animation-timeline', 'view()')) {
             console.log('Usando fallback JavaScript para animación de scroll');
 
